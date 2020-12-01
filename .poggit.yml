@@ -5,4 +5,5 @@ branches:
 projects:
   TNTRun:
     path: ""
+    icon: "assets/tntrun-background.png"
 ...
