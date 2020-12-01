@@ -31,11 +31,11 @@ class Utils
 {
     public static function recursiveDelete(string $path): void
     {
-        if (basename($path) === "." || basename($path) == "..") {
+        if (basename($path) === "." or basename($path) === "..") {
             return;
         }
         foreach (scandir($path) as $item) {
-            if ($item !== "." || $item !== "..") {
+            if ($item !== "." and $item !== "..") {
                 if (is_dir($path . DIRECTORY_SEPARATOR . $item)) {
                     self::recursiveDelete($path . DIRECTORY_SEPARATOR . $item);
                 }
