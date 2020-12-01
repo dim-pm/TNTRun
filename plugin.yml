@@ -1,0 +1,24 @@
+---
+name: TNTRun
+version: 1.0.0
+api: 3.0.0
+author: Dim Biskey
+main: Dim\TNTRun\Main
+website: https://dimmy.xyz
+description: "A mini-game for PocketMine-MP"
+permissions:
+  tntrun:
+    children:
+      tntrun.command.create:
+        description: "Ability to create new arenas."
+        default: op
+      tntrun.command.delete:
+          description: "Ability to create new arenas."
+          default: op
+      tntrun.command.join:
+        description: "Ability to join arenas."
+        default: true
+      tntrun.command.quit:
+        description: "Ability to quit arenas."
+        default: true
+...

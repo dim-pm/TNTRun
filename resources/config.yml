@@ -1,0 +1,52 @@
+---
+# In ticks
+block-remove-period: 15
+
+breakable-blocks:
+  - 24
+
+player.game.left: "&7{player} &eleft the game."
+player.game.join: "&7{player} &ejoined the game."
+player.game.elimination: "&7{player} &efell in the void."
+win.title: "&l&6VICTORY!"
+lose.title: "&l&cYOU DIED!"
+lose.subtitle: "&7You are now a spectator"
+countdown.title: "&c{count}\n&ePrepare to run!"
+countdown.message: "&eThe game starts in &c{count}&e."
+game.start: "&cGO!"
+game.start.message: "&eGame started! &cRUN!"
+player.spectate: "&eYou're now spectating &a{player}&e."
+spectate.noplayers: "&cThere are no players to spectate."
+games.notfound: "&cThere are no empty games to join."
+player.hub: "&eYou're being transferred to the hub."
+
+# Scoreboards
+scoreboard-title: "&l&eTNT RUN"
+# Scoreboards lines
+waiting-scoreboard:
+  - " "
+  - "Players: &a{players}"
+  - "  "
+  - "Waiting for players..."
+  - "   "
+  - "Map: &a{map}"
+  - "    "
+  - "&edimmy.xyz"
+countdown-scoreboard:
+  - " "
+  - "Players: &a{players}"
+  - "  "
+  - "Starting in &a{count}s"
+  - "   "
+  - "Map: &a{map}"
+  - "    "
+  - "&edimmy.xyz"
+running-scoreboard:
+  - " "
+  - "Players left: &a{players}"
+  - "  "
+  - "Map: &a{map}"
+  - "Time left: &a{time}"
+  - "   "
+  - "&edimmy.xyz"
+...
