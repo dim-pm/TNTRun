@@ -94,13 +94,16 @@ class Main extends PluginBase
 
     public function loadGame(string $name): void
     {
+        if (isset($this->games[$name])) {
+            return;
+        }
         $dir = $this->getDataFolder() . "arenas" . DIRECTORY_SEPARATOR . $name;
         $data = $dir . "/game.json";
         if (!is_file($data)) {
             return;
         }
-        $info = yaml_parse_file($data);
-        $this->games[$info["game.map"]] = new Game($this, $info["game.map"], $info["game.world"], $info["waiting.lobby"], $info["maximum.players"], $info["game.time"], $info["game.countdown"], $info["game.reset"]);
+        $info = json_decode(file_get_contents($data), true);
+        $this->games[$info["name"]] = new Game($this, $info["name"], $info["world"], $info["lobby"], $info["players"], $info["time"], $info["countdown"], $info["restart"]);
     }
 
     /**
