@@ -35,13 +35,14 @@ class Utils
             return;
         }
         foreach (scandir($path) as $item) {
-            if ($item !== "." and $item !== "..") {
-                if (is_dir($path . DIRECTORY_SEPARATOR . $item)) {
-                    self::recursiveDelete($path . DIRECTORY_SEPARATOR . $item);
-                }
-                if (is_file($path . DIRECTORY_SEPARATOR . $item)) {
-                    unlink($path . DIRECTORY_SEPARATOR . $item);
-                }
+            if ($item === "." or $item === "..") {
+                continue;
+            }
+            if (is_dir($path . DIRECTORY_SEPARATOR . $item)) {
+                self::recursiveDelete($path . DIRECTORY_SEPARATOR . $item);
+            }
+            if (is_file($path . DIRECTORY_SEPARATOR . $item)) {
+                unlink($path . DIRECTORY_SEPARATOR . $item);
             }
         }
         rmdir($path);
