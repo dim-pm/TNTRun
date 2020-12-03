@@ -57,19 +57,12 @@ class Main extends PluginBase
         $this->getServer()->getCommandMap()->register("tntrun", new TNTRunCommand($this));
     }
 
-    public function loadGames(): void
+    protected function loadGames(): void
     {
         $path = $this->getDataFolder() . "arenas" . DIRECTORY_SEPARATOR;
-        @mkdir($path);
-        $this->getLogger()->notice("Loading arenas...");
-        foreach (scandir($path) as $sub) {
-            $dir = $path . $sub;
-            $data = $dir . "/game.json";
-            if (!is_file($data)) {
-                continue;
-            }
-            $info = json_decode(file_get_contents($data), true);
-            $this->games[$info["name"]] = new Game($this, $info["name"], $info["world"], $info["lobby"], $info["players"], $info["time"], $info["countdown"], $info["restart"]);
+        $this->getLogger()->notice("Loading games...");
+        foreach (scandir($path) as $game) {
+            $this->loadGame($game);
         }
     }
 
