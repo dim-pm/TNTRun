@@ -91,7 +91,7 @@ class Main extends PluginBase
             return;
         }
         $dir = $this->getDataFolder() . "arenas" . DIRECTORY_SEPARATOR . $name;
-        $data = $dir . "/game.json";
+        $data = $dir . DIRECTORY_SEPARATOR . "game.json";
         if (!is_file($data)) {
             return;
         }
